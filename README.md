@@ -163,50 +163,6 @@ public class Lesson1 {
 }
 ```
 
-```
-import java.util.Scanner;
-
-public class Lesson1 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        double a = scanner.nextDouble();
-        double b = scanner.nextDouble();
-        
-        // Решение уравнения a*x = 0
-        int x1 = 0;
-        // Решение уравнения x-b = 0
-        double x2 = b;
-        
-        // Если введённое число а = 0
-        if (a == 0) {
-            System.out.println(b == 0 ? "x ∈ R \\ 0" : "x ∈ R \\ " + b);
-            return;
-        }
-        
-        // Основная логика через условия, но без каскада else-if
-        String message;
-        
-        if (b == 0) {
-            message = (a > 0) ? "x ∈ R \\ 0" : "x ∈ ∅";
-        } 
-        else if (a > 0 && b > 0) {
-            message = String.format("x ∈ (-∞; 0] U (%.2f; +∞)", x2);
-        } 
-        else if (a < 0 && b < 0) {
-            message = String.format("x ∈ (%.2f; 0]", x2);
-        } 
-        else if (a > 0 && b < 0) {
-            message = String.format("x ∈ (-∞; %.2f) U [0; +∞)", x2);
-        } 
-        else { // a < 0 && b > 0
-            message = String.format("x ∈ [0; %.2f)", x2);
-        }
-        
-        System.out.println(message);
-    }
-}
-```
-
 ### 6. Анализ правильности решения
 
 Программа работает корректно на всем множестве решений с учетом ограничений.
